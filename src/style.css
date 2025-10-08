@@ -30,40 +30,30 @@ body {
     width: 100px;
     height: 100%;
     display: block;
-    float: left;
 }
 
-.navigation {
-    float: right;
-    height: 100%;    
+/* Use flexbox for simpler vertical centering and spacing */
+.inner_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.navigation a {
+.navigation{
     height: 100%;
-    display: table;
-    float: left;
-    padding: 0px 20px;
-    transition: background-color 0.3s ease;
 }
 
-.navigation a:hover {
-    background-color: #2a4d63;
+.navigation ul{
+    display: flex;
+    gap: 20px;
 }
 
-.navigation a li {
-    display: table-cell;
-    vertical-align: middle;
+.navigation a{
     color: white;
-    height: 100%;
-    font-family: 'Montserrat';
-    font-size: 20px;
-}
-
-/* Hero Image */
-.heroimage img {
-    display: block;
-    width: 100%;
-    height: auto;
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 16px;
+    display: inline-block;
+    padding: 20px 10px;
 }
 
 /* Welcome Section */
@@ -77,6 +67,19 @@ body {
     font-size: 30px;
     color: white;
     padding-top: 100px;
+}
+
+/* Responsive images: hero should fill its container, logo should scale down as needed */
+.heroimage img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.logo_container img {
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
 /* Featured Work Section */
