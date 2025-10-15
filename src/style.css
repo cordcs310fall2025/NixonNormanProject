@@ -14,58 +14,65 @@ body {
 .header {
     width: 100%;
     height: 80px;
-    display: block;
-    background-color: #325b78;
+    position: fixed;  /* FIXED */
+    top: 0;           /* FIXED */
+    left: 0;          /* FIXED */
+    z-index: 1000;    /* FIXED*/
+    background: rgba(50, 91, 120, 0.9);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 254, 254, 0.1);
+    
 }
 
 .inner_header {
     width: 90%;
     height: 100%;
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     margin: 0 auto;
-    background-color: #325b78;
 }
 
 .logo_container {
     width: 100px;
     height: 100%;
-    display: block;
-}
-
-/* Use flexbox for simpler vertical centering and spacing */
-.inner_header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
 }
 
-.navigation{
+.navigation {
     height: 100%;
-}
-
-.navigation ul{
     display: flex;
-    gap: 20px;
+    align-items: center;
+    
 }
 
-.navigation a{
+.navigation ul {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    letter-spacing: 0.15em;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.navigation a {
     color: white;
     font-family: 'Montserrat', Arial, sans-serif;
-    font-size: 16px;
+    font-size: 15px;
+    font-weight: 500;
     display: inline-block;
-    padding: 20px 10px; 
-    transition: color 0.3s ease; /* Add transition here */
+    padding: 0 10px;
+    transition: all 0.3s ease;
+    position: relative;
 }
 
 .navigation a:hover {
-    color: gray; /* Change to whatever color you want */
-    text-decoration: underline;
+    color: rgba(255, 255, 255, 0.7);
 }
-
-.navigation a li{
-    list-style: none;
-}
-
 
 
 /* Welcome Section */
@@ -103,7 +110,7 @@ body {
 
 .featuredWork h2 {
     text-align: center;
-    color: #325b78;
+    color: hsl(205, 41%, 33%);
     font-size: 2.5rem;
     margin-bottom: 40px;
     font-weight: 700;
@@ -386,6 +393,8 @@ body {
     background: linear-gradient(135deg, #2c5f7a 0%, #325b78 50%, #1e4159 100%);
     padding: 60px 5%;
     margin-top: 80px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2); 
+
 }
 
 .footer-content {
