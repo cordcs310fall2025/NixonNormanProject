@@ -490,6 +490,18 @@ body {
     padding: 120px 5% 80px;
 }
 
+.quoteOrder {
+    width: 100%;
+    height: 300px;
+    background-color: black;
+    text-align: center;
+    vertical-align: middle;
+    font-family: "Montserrat";
+    font-size: 30px;
+    color: white;
+    padding-top: 100px;
+}
+
 .contact-content {
     max-width: 800px;
     text-align: center;
