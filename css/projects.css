@@ -1,12 +1,9 @@
 /* css/projects.css */
 /* Projects Gallery Page Styles */
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    list-style: none;
-    text-decoration: none;
+/* Nav on projects looked weird, couldnt figure out the issue but this helped */
+.navigation a {
+    font-weight: 400;
 }
 
 body {
