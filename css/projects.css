@@ -1,0 +1,212 @@
+/* css/projects.css */
+/* Projects Gallery Page Styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    background-color: #325b78;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                url('/images/photography.jpg') center/cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.hero h1 {
+    font-size: 8rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+}
+
+.hero-subtitle {
+    font-size: 1rem;
+    letter-spacing: 0.3em;
+    color: rgba(255, 255, 255, 0.9);
+    margin-top: 0.5rem;
+}
+
+/* Filter Navigation Section */
+.filter-section {
+    background: #325b78;
+    padding: 2rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.filters {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.filter-link {
+    color: #888;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    padding: 1rem 0;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.filter-link:hover {
+    color: #fff;
+}
+
+.filter-link.active {
+    color: #fff;
+}
+
+.filter-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: #ffffff;
+}
+
+/* Gallery Section */
+.gallery {
+    background:#325b78;
+    padding: 5rem 2rem;
+    min-height: 100vh;
+}
+
+.gallery-title {
+    text-align: center;
+    font-size: 3rem;
+    color: #333;
+    margin-bottom: 4rem;
+    font-weight: 700;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.photo-card {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.photo-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.photo-card:hover img {
+    transform: scale(1.1);
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+    padding: 2rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.overlay p {
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 0.5rem;
+}
+
+.overlay h3 {
+    font-size: 1.5rem;
+    color: white;
+    font-weight: 700;
+}
+
+.photo-card:hover .overlay {
+    opacity: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero h1 {
+        font-size: 5rem;
+    }
+
+    .hero-logo {
+        max-width: 200px;
+    }
+
+    .gallery-title {
+        font-size: 2.5rem;
+    }
+
+    .filters {
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .hero-logo {
+        max-width: 150px;
+    }
+
+    .gallery {
+        padding: 3rem 1rem;
+    }
+
+    .gallery-title {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .filters {
+        gap: 1.5rem;
+        flex-wrap: wrap;
+        padding: 0 1rem;
+    }
+
+    .filter-link {
+        font-size: 0.8rem;
+    }
+}
