@@ -278,7 +278,7 @@ $categories = getCategories();
     <div class="header">
         <div class="inner_header">
             <div class="logo_container">
-                <img src="/images/NNM-white.png" alt="Nixon Norman Media Logo" width="80" height="80">
+                <img src="../images/NNM-white.png" alt="Nixon Norman Media Logo" width="80" height="80">
             </div>
             <nav class="navigation">
                 <ul>
