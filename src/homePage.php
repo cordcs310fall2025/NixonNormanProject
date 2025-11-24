@@ -35,7 +35,7 @@ function getHomeContent() {
     
     // Default content (fallback)
     return [
-        'hero_title' => 'Nixon Norman Media',
+        'hero_title' => 'Nixon Norman',
         'hero_subtitle' => 'Creative Visual Storytelling',
         'hero_description' => 'Professional photography and videography services.',
         'cta_button_text' => 'View Our Work',
