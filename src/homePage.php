@@ -85,19 +85,19 @@ $homeContent = getHomeContent();
         <h2>Featured Work</h2>
         <div class="grid">
             <div class="grid-item">
-                <img src="images/tractorPhoto.png" alt="Tractor in field">
+                <img src="../images/tractorPhoto.png" alt="Tractor in field">
             </div>
             <div class="grid-item">
-                <img src="images/supraPhoto.png" alt="Sports car">
+                <img src="../images/supraPhoto.png" alt="Sports car">
             </div>
             <div class="grid-item">
-                <img src="images/gymPhoto.png" alt="Gym workout">
+                <img src="../images/gymPhoto.png" alt="Gym workout">
             </div>
             <div class="grid-item">
-                <img src="images/littleCar.png" alt="Classic car">
+                <img src="../images/littleCar.png" alt="Classic car">
             </div>
             <div class="grid-item">
-                <img src="images/f1Car.png" alt="Formula 1 car">
+                <img src="../images/f1Car.png" alt="Formula 1 car">
             </div>
         </div>
     </section>
