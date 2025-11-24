@@ -107,19 +107,19 @@ $homeContent = getHomeContent();
         
         <div class="clients-grid">
             <div class="client-logo">
-                <img src="/images/espn-logo.png" alt="ESPN">
+                <img src="../images/espn-logo.png" alt="ESPN">
             </div>
             <div class="client-logo">
-                <img src="/images/marvinwindows-logo.png" alt="Marvin">
+                <img src="../images/marvinwindows-logo.png" alt="Marvin">
             </div>
             <div class="client-logo">
-                <img src="/images/reedRealty-logo.png" alt="Reed Realty">
+                <img src="../images/reedRealty-logo.png" alt="Reed Realty">
             </div>
             <div class="client-logo client-logo-large">
-                <img src="/images/minnesotaWild-logo.png" alt="Minnesota Wild">
+                <img src="../images/minnesotaWild-logo.png" alt="Minnesota Wild">
             </div>
             <div class="client-logo client-logo-large">
-                <img src="/images/sothebysInternationRealty-logo.png" alt="Sotheby's International Realty">
+                <img src="../images/sothebysInternationRealty-logo.png" alt="Sotheby's International Realty">
             </div>
         </div>
     </section>
