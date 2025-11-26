@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <title>Nixon Norman Media — Edit Project</title>
+</head>
+<body>
+    <div class="header">
+        <div class="inner_header">
+            <div class="logo_container">
+                <img src="../images/nnmlogo.png" alt="Nixon Norman Media Logo" width="80" height="80">
+            </div>
+            <nav class="navigation">
+                <ul>
+                    <li><a href="homePage.html">Home</a></li>
+                    <li><a href="aboutPage.html">About</a></li>
+                    <li><a href="contactPage.html">Contact</a></li>
+                    <li><a href="gearPage.html">Gear</a></li>
+                    <li><a href="projectsPage.html">Projects</a></li>
+                    <li><a href="adminHome.html">Admin</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <section class="admin-hero">
+        <div class="admin-content">
+            <h1>Edit Project</h1>
+            <p>Update project details and settings</p>
+        </div>
+    </section>
+
+    <section class="admin-form-section">
+        <div class="form-container">
+            <div class="form-header">
+                <h2>Project Details</h2>
+                <a href="adminItemList.html" class="btn btn-secondary">← Back to List</a>
+            </div>
+
+            <form class="admin-form">
+                <div class="form-group">
+                    <label for="projectId">Project ID</label>
+                    <input type="text" id="projectId" name="projectId" value="#001" readonly>
+                </div>
+
+                <div class="form-group">
+                    <label for="projectName">Project Name *</label>
+                    <input type="text" id="projectName" name="projectName" value="McLaren Wide Shot" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="projectType">Type *</label>
+                        <select id="projectType" name="projectType" required>
+                            <option value="photography" selected>Photography</option>
+                            <option value="video">Video</option>
+                            <option value="both">Photo & Video</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="projectDate">Date</label>
+                        <input type="date" id="projectDate" name="projectDate" value="2025-10-10">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="projectStatus">Status *</label>
+                    <select id="projectStatus" name="projectStatus" required>
+                        <option value="active" selected>Active</option>
+                        <option value="draft">Draft</option>
+                        <option value="archived">Archived</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="projectDescription">Description</label>
+                    <textarea id="projectDescription" name="projectDescription" rows="5">High-quality automotive photography session featuring a McLaren sports car in a wide-angle composition.</textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="projectImage">Featured Image URL</label>
+                    <input type="text" id="projectImage" name="projectImage" value="../images/mclarenwide.png">
+                </div>
+
+                <div class="form-group">
+                    <label for="projectTags">Tags (comma-separated)</label>
+                    <input type="text" id="projectTags" name="projectTags" value="automotive, photography, McLaren, sports car">
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                    <button type="button" class="btn btn-secondary" onclick="window.location.href='adminItemList.html'">Cancel</button>
+                    <button type="button" class="btn btn-danger">Delete Project</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+</body>
+</html>
