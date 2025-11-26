@@ -60,8 +60,8 @@ function getAboutContent() {
 // Get the about content
 $aboutContent = getAboutContent();
 
-// Check if running from src/ subdirectory for image paths
-$imageBasePath = (strpos($_SERVER['REQUEST_URI'], '/src/') !== false) ? '../images/' : '/images/';
+// Set base path for images
+$imagePath = '/NixonNormanProject/images/';
 
 ?>
 <!DOCTYPE html>
@@ -186,18 +186,16 @@ $imageBasePath = (strpos($_SERVER['REQUEST_URI'], '/src/') !== false) ? '../imag
     <div class="header">
         <div class="inner_header">
             <div class="logo_container">
-                <img src="<?php echo $imageBasePath; ?>nnmlogo.png" alt="Nixon Norman Media Logo" width="80" height="80">
+                <img src="<?php echo $imagePath; ?>NNM-white.png" alt="Nixon Norman Media Logo" width="80" height="80">
             </div>
             <nav class="navigation">
                 <ul>
                     <li><a href="homePage.php" <?php echo ($currentPage == 'home') ? 'class="active"' : ''; ?>>Home</a></li>
                     <li><a href="aboutPage.php" <?php echo ($currentPage == 'about') ? 'class="active"' : ''; ?>>About</a></li>
-                    <li><a href="contactPage.php" <?php echo ($currentPage == 'contact') ? 'class="active"' : ''; ?>>Contact</a></li>
-                    <li><a href="gearPage.php" <?php echo ($currentPage == 'gear') ? 'class="active"' : ''; ?>>Gear</a></li>
-                    <li><a href="projectsPage.php" <?php echo ($currentPage == 'projects') ? 'class="active"' : ''; ?>>Projects</a></li>
-                    <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true): ?>
-                        <li><a href="adminHome.php" <?php echo ($currentPage == 'admin') ? 'class="active"' : ''; ?>>Admin</a></li>
-                    <?php endif; ?>
+                    <li><a href="contactPage.php">Contact</a></li>
+                    <li><a href="gearPage.php">Gear</a></li>
+                    <li><a href="projectsPage.php">Projects</a></li>
+                    <li><a href="adminHome.php">Admin</a></li>
                 </ul>
             </nav>
         </div>
@@ -237,7 +235,7 @@ $imageBasePath = (strpos($_SERVER['REQUEST_URI'], '/src/') !== false) ? '../imag
 
     <!-- About Image -->
     <div class="about-image-container">  
-        <img src="<?php echo $imageBasePath; ?>nixonaboutpicture.png" alt="Picture of Nixon" width="500px" height="auto">
+        <img src="<?php echo $imagePath; ?>nixonaboutpicture.png" alt="Picture of Nixon" width="500px" height="auto">
     </div>
 
     <!-- Services Section -->
