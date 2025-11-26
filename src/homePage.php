@@ -45,6 +45,9 @@ function getHomeContent() {
 
 // Get all content
 $homeContent = getHomeContent();
+
+// Set base path for images
+$imagePath = '/NixonNormanProject/images/';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -59,7 +62,7 @@ $homeContent = getHomeContent();
     <div class="header">
         <div class="inner_header">
             <div class="logo_container">
-                    <img src="../images/NNM-white.png" alt="Nixon Norman Media Logo" width="80" height="80">
+                    <img src="<?php echo $imagePath; ?>NNM-white.png" alt="Nixon Norman Media Logo" width="80" height="80">
             </div>
             <nav class="navigation">
                 <ul>
@@ -75,7 +78,7 @@ $homeContent = getHomeContent();
     </div>
     
     <div class="heroimage">  
-        <img src="/images/mclarenQuality.png" alt="Hero Image" width="100%" height="auto">
+        <img src="<?php echo $imagePath; ?>mclarenQuality.png" alt="Hero Image" width="100%" height="auto">
     </div>
     
     <section class="welcometext">
@@ -85,19 +88,19 @@ $homeContent = getHomeContent();
         <h2>Featured Work</h2>
         <div class="grid">
             <div class="grid-item">
-                <img src="images/tractorPhoto.png" alt="Tractor in field">
+                <img src="<?php echo $imagePath; ?>tractorPhoto.png" alt="Tractor in field">
             </div>
             <div class="grid-item">
-                <img src="images/supraPhoto.png" alt="Sports car">
+                <img src="<?php echo $imagePath; ?>supraPhoto.png" alt="Sports car">
             </div>
             <div class="grid-item">
-                <img src="images/gymPhoto.png" alt="Gym workout">
+                <img src="<?php echo $imagePath; ?>gymPhoto.png" alt="Gym workout">
             </div>
             <div class="grid-item">
-                <img src="images/littleCar.png" alt="Classic car">
+                <img src="<?php echo $imagePath; ?>littleCar.png" alt="Classic car">
             </div>
             <div class="grid-item">
-                <img src="images/f1Car.png" alt="Formula 1 car">
+                <img src="<?php echo $imagePath; ?>f1Car.png" alt="Formula 1 car">
             </div>
         </div>
     </section>
@@ -107,19 +110,19 @@ $homeContent = getHomeContent();
         
         <div class="clients-grid">
             <div class="client-logo">
-                <img src="/images/espn-logo.png" alt="ESPN">
+                <img src="<?php echo $imagePath; ?>espn-logo.png" alt="ESPN">
             </div>
             <div class="client-logo">
-                <img src="/images/marvinwindows-logo.png" alt="Marvin">
+                <img src="<?php echo $imagePath; ?>marvinwindows-logo.png" alt="Marvin">
             </div>
             <div class="client-logo">
-                <img src="/images/reedRealty-logo.png" alt="Reed Realty">
+                <img src="<?php echo $imagePath; ?>reedRealty-logo.png" alt="Reed Realty">
             </div>
             <div class="client-logo client-logo-large">
-                <img src="/images/minnesotaWild-logo.png" alt="Minnesota Wild">
+                <img src="<?php echo $imagePath; ?>minnesotaWild-logo.png" alt="Minnesota Wild">
             </div>
             <div class="client-logo client-logo-large">
-                <img src="/images/sothebysInternationRealty-logo.png" alt="Sotheby's International Realty">
+                <img src="<?php echo $imagePath; ?>sothebysInternationRealty-logo.png" alt="Sotheby's International Realty">
             </div>
         </div>
     </section>
