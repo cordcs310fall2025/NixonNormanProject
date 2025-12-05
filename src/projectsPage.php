@@ -67,23 +67,8 @@ $categories = getCategories();
 </head>
 <body>
     <!-- Navigation -->
-    <div class="header">
-        <div class="inner_header">
-            <div class="logo_container">
-                <img src="<?php echo $imagePath; ?>NNM-white.png" alt="Nixon Norman Media Logo" width="80" height="80">
-            </div>
-            <nav class="navigation">
-                <ul>
-                    <li><a href="homePage.php">HOME</a></li>
-                    <li><a href="aboutPage.php">ABOUT</a></li>
-                    <li><a href="contactPage.php">CONTACT</a></li>
-                    <li><a href="gearPage.php">GEAR</a></li>
-                    <li><a href="projectsPage.php">PROJECTS</a></li>
-                    <li><a href="adminHome.php">ADMIN</a></li>
-                </ul>
-            </nav>
-        </div>
-    </div>
+    <?php include '../includes/header.php'; ?>
+
     
     <!-- Hero Section -->
     <section class="hero">
