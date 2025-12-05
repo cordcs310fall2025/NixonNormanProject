@@ -1,32 +1,57 @@
-<?php
-//POST data
-$email = $_POST['email'];
-$selectedJobType = $_POST['selectedJobType'];
-$jobDate = $_POST['jobDate'];
-$jobComments = $_POST['jobComments'];
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <title>Nixon Norman Media — Contact</title>
+</head>
+<body>
 
-// DB connection
-$conn = new mysqli('localhost', 'root', '', 'contactForms');
+<!-- Navigation -->
+<?php include '../includes/header.php'; ?>
 
-if ($conn->connect_error) {
-    die('Connection failed: ' . $conn->connect_error);
-}
+<div class="contactHero">
+    <section class="quoteOrderWelcome">
+        <h2>Order a Quote Today!</h2>
+    </section>
+    <section class="contactInfoEntry">
+        <form action="contactSubmit.php" method="post">
+        <div class="emailInputSection">
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email" placeholder="Enter your email">
+        </div>
 
-// SQL statement
-$stmt = $conn->prepare("
-    INSERT INTO contactFormSubmissions (email, jobDate, selectedJobType, jobComments)
-    VALUES (?, ?, ?, ?)
-");
+        <div class="jobSelectionSection">
+            <label for="jobType">Choose a Job Type:</label>
+            <select id="jobType" name="selectedJobType">
+                <option value="commercialPhotoShoot">Commercial PhotoShoot</option>
+                <option value="commercialVideoShoot">Commercial VideoShoot</option>
+                <option value="eventPhotoShoot">Event PhotoShoot</option>
+                <option value="eventVideoShoot">Event VideoShoot</option>
+            </select>
+        </div>
 
-$stmt->bind_param("ssss", $email, $jobDate, $selectedJobType, $jobComments);
+        <div class="jobDateSelectionSection">
+            <label for="jobDate">Select a Date for Your Shoot:</label>
+            <input type="date" id="jobDate" name="jobDate">
+        </div>
 
-// submit
-if ($stmt->execute()) {
-    echo "Submission successful! Expect a response in roughly _ business days";
-} else {
-    echo "Error: " . $stmt->error;
-}
+        <div class="jobCommentsSection">
+            <label for="jobComments">Job Details:</label>
+            <textarea id="jobComments" name="jobComments" rows="5" cols="40" placeholder="Enter your job details here"></textarea>
+        </div>
 
-$stmt->close();
-$conn->close();
-?>
+        <div class="submitButton-div">
+            <button type="submit">Submit</button>
+        </div>
+        </form>
+    </section>
+
+    <!--FOOTER-->
+    <?php include '../includes/footer.php'; ?>  
+
+</div>
+</body>
+</html>
