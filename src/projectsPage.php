@@ -15,7 +15,7 @@ function getProjects($category = 'ALL') {
     if (testDatabaseConnection()) {
         try {
             $pdo = getDatabaseConnection();
-            
+
             if ($category === 'ALL') {
                 $stmt = $pdo->query("SELECT * FROM projects ORDER BY created_at DESC");
             } else {
@@ -23,13 +23,48 @@ function getProjects($category = 'ALL') {
                 $stmt->bindValue(':category', $category, PDO::PARAM_STR);
                 $stmt->execute();
             }
-            
+
             return $stmt->fetchAll();
         } catch (Exception $e) {
             error_log("Database error: " . $e->getMessage());
         }
     }
     return [];
+}
+
+// Function to get the featured image for a project
+function getFeaturedImage($projectId) {
+    try {
+        $pdo = getDatabaseConnection();
+
+        // First, try to get a featured image
+        $stmt = $pdo->prepare("
+            SELECT file_path
+            FROM project_images
+            WHERE project_id = :project_id AND is_featured = 1
+            LIMIT 1
+        ");
+        $stmt->execute([':project_id' => $projectId]);
+        $image = $stmt->fetchColumn();
+
+        // If no featured image, get the first image by display order
+        if (!$image) {
+            $stmt = $pdo->prepare("
+                SELECT file_path
+                FROM project_images
+                WHERE project_id = :project_id
+                ORDER BY display_order ASC, uploaded_at ASC
+                LIMIT 1
+            ");
+            $stmt->execute([':project_id' => $projectId]);
+            $image = $stmt->fetchColumn();
+        }
+
+        return $image;
+    } catch (Exception $e) {
+        error_log("Error getting featured image: " . $e->getMessage());
+        return null;
+    }
 }
 
 // Get projects based on selected category
@@ -96,21 +131,20 @@ $categories = getCategories();
         <div class="grid">
             <?php if (!empty($projects)): ?>
                 <?php foreach ($projects as $project): ?>
-                    <div class="photo-card">
-                        <?php 
-                        // Fix image path: if it starts with /images/, replace with /NixonNormanProject/images/
-                        $imageUrl = $project['image_url'];
-                        if (strpos($imageUrl, '/images/') === 0) {
-                            $imageUrl = '/NixonNormanProject' . $imageUrl;
-                        }
-                        ?>
-                        <img src="<?php echo htmlspecialchars($imageUrl); ?>" 
-                             alt="<?php echo htmlspecialchars($project['title']); ?>">
-                        <div class="overlay">
-                            <p><?php echo htmlspecialchars($project['category']); ?></p>
-                            <h3><?php echo htmlspecialchars($project['title']); ?></h3>
+                    <?php
+                    // Only show projects that have uploaded images
+                    $imageUrl = getFeaturedImage($project['id']);
+
+                    if ($imageUrl): ?>
+                        <div class="photo-card">
+                            <img src="<?php echo htmlspecialchars($imageUrl); ?>"
+                                 alt="<?php echo htmlspecialchars($project['title']); ?>">
+                            <div class="overlay">
+                                <p><?php echo htmlspecialchars($project['category']); ?></p>
+                                <h3><?php echo htmlspecialchars($project['title']); ?></h3>
+                            </div>
                         </div>
-                    </div>
+                    <?php endif; ?>
                 <?php endforeach; ?>
             <?php else: ?>
                 <p style="color: white; text-align: center; width: 100%;">No projects found in this category.</p>
