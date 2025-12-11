@@ -137,6 +137,11 @@ $categories = getCategories();
                     <?php
                     // Get the image URL directly from the projects table
                     $imageUrl = $project['image_url'];
+                    
+                    // Add base path if the URL doesn't already include it
+                    if ($imageUrl && strpos($imageUrl, '/NixonNormanProject/') === false) {
+                        $imageUrl = '/NixonNormanProject' . $imageUrl;
+                    }
 
                     if ($imageUrl): ?>
                         <div class="photo-card">
@@ -158,5 +163,5 @@ $categories = getCategories();
     <!--FOOTER-->
     <?php include '../includes/footer.php'; ?>
 
-</body>
+    </body>
 </html>

@@ -332,6 +332,34 @@ $imagePath = '/NixonNormanProject/images/';
                 </a>
             </div>
         </div>
+
+        <!-- Client Management Section -->
+        <div class="recent-activity" style="margin-top: 40px;">
+            <h2>Manage Clients</h2>
+            <div class="action-buttons">
+                <!-- View all clients button -->
+                <a href="admin_clients_list.php" class="btn btn-primary">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="9" cy="7" r="4"></circle>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                    </svg>
+                    View All Clients
+                </a>
+
+                <!-- Add new client button -->
+                <a href="admin_add_client.php" class="btn btn-accent">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="8.5" cy="7" r="4"></circle>
+                        <line x1="20" y1="8" x2="20" y2="14"></line>
+                        <line x1="23" y1="11" x2="17" y2="11"></line>
+                    </svg>
+                    Add New Client
+                </a>
+            </div>
+        </div>
     </section>
 
 </body>
