@@ -411,6 +411,14 @@ body {
     font-weight: 700;
 }
 
+.footer h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    color: white !important;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
 .footer-email {
     font-family: 'Montserrat', sans-serif;
     font-size: 1.25rem;
