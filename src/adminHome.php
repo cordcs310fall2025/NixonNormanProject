@@ -283,8 +283,7 @@ $imagePath = '/NixonNormanProject/images/';
                 <ul>
                     <li><a href="homePage.php">Home</a></li>
                     <li><a href="aboutPage.php">About</a></li>
-                    <li><a href="contactPage.html">Contact</a></li>
-                    <li><a href="gearPage.html">Gear</a></li>
+                    <li><a href="contactPage.php">Contact</a></li>
                     <li><a href="projectsPage.php">Projects</a></li>
                     <li><a href="adminHome.php" class="active">Admin</a></li>
                 </ul>

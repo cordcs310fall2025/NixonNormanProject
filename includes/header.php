@@ -11,7 +11,7 @@
                 <ul>
                     <li><a href="homePage.php" <?php echo ($currentPage == 'home') ? 'class="active"' : ''; ?>>Home</a></li>
                     <li><a href="aboutPage.php" <?php echo ($currentPage == 'about') ? 'class="active"' : ''; ?>>About</a></li>
-                    <li><a href="contactPage.php">Contact</a></li> <!--IN HTML-->
+                    <li><a href="contactPage.php" <?php echo ($currentPage == 'contact') ? 'class="active"' : ''; ?>>Contact</a></li>
                     <!--<li><a href="gearPage.php">Gear</a></li>-->
                     <li><a href="projectsPage.php">Projects</a></li>
                     <li><a href="adminHome.php">Admin</a></li>

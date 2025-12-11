@@ -33,6 +33,8 @@ function getProjects($category = 'ALL') {
 }
 
 // Function to get the featured image for a project
+// NOTE: This function is no longer needed since image_url is stored directly in projects table
+/*
 function getFeaturedImage($projectId) {
     try {
         $pdo = getDatabaseConnection();
@@ -66,6 +68,7 @@ function getFeaturedImage($projectId) {
         return null;
     }
 }
+*/
 
 // Get projects based on selected category
 $projects = getProjects($selectedCategory);
@@ -132,8 +135,8 @@ $categories = getCategories();
             <?php if (!empty($projects)): ?>
                 <?php foreach ($projects as $project): ?>
                     <?php
-                    // Only show projects that have uploaded images
-                    $imageUrl = getFeaturedImage($project['id']);
+                    // Get the image URL directly from the projects table
+                    $imageUrl = $project['image_url'];
 
                     if ($imageUrl): ?>
                         <div class="photo-card">
