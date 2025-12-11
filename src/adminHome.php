@@ -283,8 +283,7 @@ $imagePath = '/NixonNormanProject/images/';
                 <ul>
                     <li><a href="homePage.php">Home</a></li>
                     <li><a href="aboutPage.php">About</a></li>
-                    <li><a href="contactPage.html">Contact</a></li>
-                    <li><a href="gearPage.html">Gear</a></li>
+                    <li><a href="contactPage.php">Contact</a></li>
                     <li><a href="projectsPage.php">Projects</a></li>
                     <li><a href="adminHome.php" class="active">Admin</a></li>
                 </ul>
@@ -303,112 +302,33 @@ $imagePath = '/NixonNormanProject/images/';
     <section class="admin-hero">
         <div class="admin-content">
             <h1>Admin Dashboard</h1>
-            <p>Manage your content, projects, and site settings</p>
+            <p>Manage your projects</p>
         </div>
     </section>
 
     <!-- Main dashboard section -->
     <section class="admin-dashboard">
-        <!-- Grid of management cards -->
-        <div class="dashboard-container">
-            <!-- Projects Card -->
-            <a href="adminItemList.html" class="dashboard-card card-projects">
-                <div class="card-overlay"></div>
-                <div class="card-content">
-                    <div class="card-icon">
-                        <!-- Folder icon -->
-                        <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
-                        </svg>
-                    </div>
-                    <h3>Projects</h3>
-                    <p class="card-number">24</p>
-                    <span class="card-link">View All →</span>
-                </div>
-            </a>
-
-            <!-- Media Library Card -->
-            <a href="adminItemList.html" class="dashboard-card card-media">
-                <div class="card-overlay"></div>
-                <div class="card-content">
-                    <div class="card-icon">
-                        <!-- Image icon -->
-                        <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                            <circle cx="8.5" cy="8.5" r="1.5"></circle>
-                            <polyline points="21 15 16 10 5 21"></polyline>
-                        </svg>
-                    </div>
-                    <h3>Media Library</h3>
-                    <p class="card-number">156</p>
-                    <span class="card-link">Manage →</span>
-                </div>
-            </a>
-
-            <!-- Equipment Card -->
-            <a href="gearPage.html" class="dashboard-card card-gear">
-                <div class="card-overlay"></div>
-                <div class="card-content">
-                    <div class="card-icon">
-                        <!-- Settings icon -->
-                        <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="3"></circle>
-                            <path d="M12 1v6m0 6v6m9-9h-6m-6 0H3m15.364-6.364l-4.243 4.243m-6 6l-4.243 4.243m12.728 0l-4.243-4.243m-6-6l-4.243-4.243"></path>
-                        </svg>
-                    </div>
-                    <h3>Equipment</h3>
-                    <p class="card-number">Gear</p>
-                    <span class="card-link">View →</span>
-                </div>
-            </a>
-
-            <!-- Contact Card -->
-            <a href="contactPage.html" class="dashboard-card card-analytics">
-                <div class="card-overlay"></div>
-                <div class="card-content">
-                    <div class="card-icon">
-                        <!-- Analytics/chart icon -->
-                        <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <line x1="18" y1="20" x2="18" y2="10"></line>
-                            <line x1="12" y1="20" x2="12" y2="4"></line>
-                            <line x1="6" y1="20" x2="6" y2="14"></line>
-                        </svg>
-                    </div>
-                    <h3>Contact</h3>
-                    <p class="card-number">Connect</p>
-                    <span class="card-link">View →</span>
-                </div>
-            </a>
-        </div>
-
         <!-- Quick actions section -->
         <div class="recent-activity">
-            <h2>Quick Actions</h2>
+            <h2>Manage Projects</h2>
             <div class="action-buttons">
-                <!-- View all items button -->
-                <a href="adminItemList.html" class="btn btn-primary">
+                <!-- View all projects button -->
+                <a href="admin_projects_list.php" class="btn btn-primary">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <line x1="12" y1="1" x2="12" y2="23"></line>
-                        <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                        <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                        <polyline points="21 15 16 10 5 21"></polyline>
                     </svg>
-                    View All Items
+                    View All Projects
                 </a>
-                
-                <!-- Add new project button -->
-                <a href="adminEdit.html" class="btn btn-secondary">
+
+                <!-- Manage tags button -->
+                <a href="admin_manage_tags.php" class="btn btn-secondary">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <line x1="12" y1="5" x2="12" y2="19"></line>
-                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+                        <line x1="7" y1="7" x2="7.01" y2="7"></line>
                     </svg>
-                    Add New Project
-                </a>
-                
-                <!-- View projects button -->
-                <a href="projectsPage.php" class="btn btn-accent">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
-                    </svg>
-                    View Projects
+                    Manage Tags
                 </a>
             </div>
         </div>
